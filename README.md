@@ -1,6 +1,6 @@
-# asdf-elixir
+# mise-elixir
 
-Elixir plugin for [asdf](https://github.com/asdf-vm/asdf) version manager
+Elixir plugin for [mise](https://github.com/jdx/mise) version manager
 
 ## Install
 
@@ -12,7 +12,7 @@ If you have a Debian system you can install it by typing:
 > *Elixir requires Erlang to be installed. You can use the [asdf-erlang](https://github.com/asdf-vm/asdf-erlang) plugin to install Erlang versions.*
 
 ```
-asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+asdf plugin install elixir https://github.com/glossia/mise-elixir.git
 ```
 
 ## Check compatibility between elixir and erlang:
@@ -28,7 +28,7 @@ The precompiled packages are built against every officially supported OTP versio
 elixir version, like `1.4.5`, the downloaded binaries will be those compiled against the oldest OTP release
 supported by that version.
 
-If you would like to use precompiled binaries built with a more recent OTP, you can append `-otp-${OTP_MAJOR_VERSION}` to any installable version that can be given to asdf-elixir.
+If you would like to use precompiled binaries built with a more recent OTP, you can append `-otp-${OTP_MAJOR_VERSION}` to any installable version that can be given to mise-elixir.
 
 So, for example, to install Elixir 1.5.0 and take advantage of the new features from OTP-20 you might install version `1.5.0-otp-20`.
 
@@ -41,21 +41,21 @@ Be sure to also install the corresponding Erlang/OTP version with asdf-erlang, a
 
 ### Using the CLI
 
-You can download and compile a specific commit reference from the [Elixir GitHub repository](https://github.com/elixir-lang/elixir/commits/main) by running: `asdf install elixir ref:<commit reference>`. You can then set the local/global version to your new version by running:
+You can download and compile a specific commit reference from the [Elixir GitHub repository](https://github.com/elixir-lang/elixir/commits/main) by running: `mise install elixir ref:<commit reference>`. You can then set the local/global version to your new version by running:
 
 ```
-asdf local elixir ref:<commit reference>
+mise local elixir ref:<commit reference>
 # Or
-asdf global elixir ref:<commit reference>
+mise global elixir ref:<commit reference>
 ```
 
-You can also [compile Elixir from source](https://github.com/elixir-lang/elixir/tree/master#compiling-from-source) without using `asdf` (for example, so that you can use the `master` branch of elixir or a branch with your own modifications), then use it by specifying the directory path:
+You can also [compile Elixir from source](https://github.com/elixir-lang/elixir/tree/master#compiling-from-source) without using `mise` (for example, so that you can use the `main` branch of elixir or a branch with your own modifications), then use it by specifying the directory path:
 
 ```
 # After Elixir already installed into /path/to/elixir
-asdf local elixir path:/path/to/elixir
+mise local elixir path:/path/to/elixir
 # Or
-asdf global elixir path:/path/to/elixir
+mise global elixir path:/path/to/elixir
 ```
 
 
@@ -78,7 +78,7 @@ Note that the path specified must be an absolute path to the Elixir installation
 ## Elixir escripts support
 
 This plugin supports elixir escripts, adding them to your path just like any other elixir binary.
-Whenever you install a new escript with `mix escript.install` you need to `asdf reshim elixir` in order
+Whenever you install a new escript with `mix escript.install` you need to `mise reshim elixir` in order
 to create shims for it.
 
 ## Default `mix` commands
@@ -96,7 +96,7 @@ archive.install hex phx_new
 
 ## Use
 
-Check [asdf](https://github.com/asdf-vm/asdf) readme for instructions on how to install & manage versions of Elixir.
+Check [mise](https://github.com/jdx/mise) readme for instructions on how to install & manage versions of Elixir.
 
 ## Helpful Articles:
 
